@@ -82,3 +82,5 @@ ShortUrlReceive response = facade.Receive();
 
 //facade.Dispose();
 ```
+
+__Note:__ ___500 requests per day per user account___
