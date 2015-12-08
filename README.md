@@ -4,7 +4,6 @@ API Site trim [https://tr.im/]
 
 [![Canducci ShortUrl](http://i1194.photobucket.com/albums/aa377/netdragoon1/1449629657_Location%20HTTP_zpsec7muau0.png)](https://packagist.org/packages/canducci/zipcode)
 
-[![Build Status](https://travis-ci.org/netdragoon/shorturl.svg)](https://travis-ci.org/netdragoon/shorturl)
 [![NuGet](https://img.shields.io/nuget/dt/CanducciShortUrl.svg?style=plastic)](https://www.nuget.org/packages/CanducciShortUrl/)
 [![NuGet](https://img.shields.io/nuget/v/CanducciShortUrl.svg?style=plastic)](https://www.nuget.org/packages/CanducciShortUrl/)
 
