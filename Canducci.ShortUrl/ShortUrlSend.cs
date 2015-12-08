@@ -16,7 +16,8 @@ namespace Canducci.ShortUrl
         }
         public ShortUrlSend(string LongUrl, string Seed, string Keyword, string VanityDomain)
         {
-            Validation.IsUrl(LongUrl, "Url invalid.");
+            Validation.IsNullOrEmpty(LongUrl, "LongUrl is empty.");
+            Validation.IsUrl(LongUrl, "Url invalid.");            
             this.LongUrl = LongUrl;
             this.Seed = Seed;
             this.Keyword = Keyword;
@@ -35,6 +36,7 @@ namespace Canducci.ShortUrl
         
         [JsonProperty("vanity_domain")]
         public string VanityDomain { get; private set; }
+
         public string ToJson()
         {
             return JsonData.ToJson(this);
