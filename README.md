@@ -26,14 +26,44 @@ PM> Install-Package CanducciShortUrl
 
 ##How to use:
 
-```Csharp
 Declare o namespace `using Canducci.ShortUrl;` 
-```
+
 
 ##Code:
 
+#Simply Instance
 ```Csharp
+string ApiKey = "";
+string Url = "";
 
+ShortUrlSend request = new ShortUrlSend(Url);
+ShortUrlClient client = new ShortUrlClient(ApiKey);
+ShortUrlReceive response = client.Receive(request);
 
+client.Dispose();
 ```
+___
 
+#Factory
+```Csharp
+string ApiKey = "";
+string Url = "";
+
+ShortUrlSend request = ShortUrlSendFactory.Create(Url);            
+ShortUrlClient client = ShortUrlClientFactory.Create(ApiKey);            
+ShortUrlReceive response = client.Receive(request);
+
+client.Dispose();
+```
+___
+
+###Facade
+```
+string ApiKey = "";
+string Url = "";
+
+ShortUrlFacade facade = ShortUrlFactory.Create(ApiKey, Url);
+ShortUrlReceive receive = facade.Receive();
+
+client.Dispose();
+```
