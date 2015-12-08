@@ -31,7 +31,8 @@ Declare o namespace `using Canducci.ShortUrl;`
 
 ##Code:
 
-#Simply Instance
+###Simply Instance
+
 ```Csharp
 string ApiKey = "";
 string Url = "";
@@ -48,7 +49,8 @@ client.Dispose();
 ```
 ___
 
-#Factory
+###Factory
+
 ```Csharp
 string ApiKey = "";
 string Url = "";
@@ -66,6 +68,7 @@ client.Dispose();
 ___
 
 ###Facade
+
 ```
 string ApiKey = "";
 string Url = "";
