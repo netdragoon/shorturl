@@ -8,9 +8,14 @@ namespace Canducci.Web45.Controllers
     {
         public async Task<ActionResult> Index()
         {
-            ShortUrlSend request = ShortUrlSendFactory.Create("http://www.muchiutt.com.br/");
 
-            ShortUrlClient client = ShortUrlClientFactory.Create("36b56b77ac24e5595b626b38c6e00074");
+            string ApiKey = ""; //digite o api key
+
+            string Url = ""; //digite a url
+
+            ShortUrlSend request = ShortUrlSendFactory.Create(Url);
+
+            ShortUrlClient client = ShortUrlClientFactory.Create(ApiKey);
 
             ShortUrlReceive response = await client.ReceiveAsync(request);
 

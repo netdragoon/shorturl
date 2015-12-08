@@ -9,9 +9,12 @@ namespace Canducci.Web4
         {
             if (!Page.IsPostBack)
             {
-                string ApiKey = "";
 
-                ShortUrlSend request = ShortUrlSendFactory.Create("http://www.muchiutt.com.br/loja");
+                string ApiKey = ""; // digite a apikey
+
+                string Url = ""; // digite o endereço
+
+                ShortUrlSend request = ShortUrlSendFactory.Create(Url);
 
                 ShortUrlClient client = ShortUrlClientFactory.Create(ApiKey);
 

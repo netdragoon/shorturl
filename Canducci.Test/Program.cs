@@ -7,15 +7,17 @@ namespace Canducci.Test
         {
             //36b56b77ac24e5595b626b38c6e00074
 
-            ShortUrlSend request = ShortUrlSendFactory.Create("http://www.muchiutt.com.br/loja");            
+            string ApiKey = "36b56b77ac24e5595b626b38c6e00074";
+
+            string Url = "http://www.muchiutt.com.br/loja";
+
+            ShortUrlSend request = ShortUrlSendFactory.Create(Url);            
 
             //ShortUrlClient client = ShortUrlClientFactory.Create("36b56b77ac24e5595b626b38c6e00074");            
 
             //ShortUrlReceive response = client.Receive(request);
 
-            //client.Dispose();
-
-            string ApiKey = "36b56b77ac24e5595b626b38c6e00074";
+            //client.Dispose();            
 
             ShortUrlFacade facade = ShortUrlFactory.Create(ApiKey, "http://www.uol.com.br");
 

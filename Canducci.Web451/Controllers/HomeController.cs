@@ -7,8 +7,10 @@ namespace Canducci.Web451.Controllers
     {
         public async Task<ActionResult> Index()
         {
+            string ApiKey = ""; // digite o api key
+            string Url = ""; // digite o endereço
 
-            ShortUrlFacade facade = ShortUrlFactory.Create("36b56b77ac24e5595b626b38c6e00074", "http://www.muchiutt.com.br/");
+            ShortUrlFacade facade = ShortUrlFactory.Create(ApiKey, Url);
 
             ShortUrlReceive response = await facade.ReceiveAsync();
 
