@@ -16,7 +16,7 @@ Create a username and password on tr.im site. After entering the site go to Sett
 ####ApiKey
 [![Settings 2](http://i1194.photobucket.com/albums/aa377/netdragoon1/save2_zpszehapgew.png)]()
 
-##Instalação do Pacote (NUGET)
+##Installation NUGET
 
 
 ```Csharp
@@ -30,4 +30,10 @@ PM> Install-Package CanducciShortUrl
 Declare o namespace `using Canducci.ShortUrl;` 
 ```
 
+##Code:
+
+```Csharp
+
+
+```
 
