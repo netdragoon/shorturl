@@ -45,7 +45,7 @@ ShortUrlReceive response = client.Receive(request);
 //response.ShortUrl;
 //response.Url;
 
-client.Dispose();
+//client.Dispose();
 ```
 ___
 
@@ -63,7 +63,7 @@ ShortUrlReceive response = client.Receive(request);
 //response.ShortUrl;
 //response.Url;
 
-client.Dispose();
+//client.Dispose();
 ```
 ___
 
@@ -80,5 +80,5 @@ ShortUrlReceive response = facade.Receive();
 //response.ShortUrl;
 //response.Url;
 
-client.Dispose();
+//facade.Dispose();
 ```
