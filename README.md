@@ -40,6 +40,10 @@ ShortUrlSend request = new ShortUrlSend(Url);
 ShortUrlClient client = new ShortUrlClient(ApiKey);
 ShortUrlReceive response = client.Receive(request);
 
+//receive.Keyword;
+//receive.ShortUrl;
+//receive.Url;
+
 client.Dispose();
 ```
 ___
@@ -53,6 +57,10 @@ ShortUrlSend request = ShortUrlSendFactory.Create(Url);
 ShortUrlClient client = ShortUrlClientFactory.Create(ApiKey);            
 ShortUrlReceive response = client.Receive(request);
 
+//receive.Keyword;
+//receive.ShortUrl;
+//receive.Url;
+
 client.Dispose();
 ```
 ___
@@ -63,7 +71,11 @@ string ApiKey = "";
 string Url = "";
 
 ShortUrlFacade facade = ShortUrlFactory.Create(ApiKey, Url);
-ShortUrlReceive receive = facade.Receive();
+ShortUrlReceive response = facade.Receive();
+
+//receive.Keyword;
+//receive.ShortUrl;
+//receive.Url;
 
 client.Dispose();
 ```
