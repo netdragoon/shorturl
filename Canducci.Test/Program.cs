@@ -11,7 +11,7 @@ namespace Canducci.Test
 
             string Url = "http://www.muchiutt.com.br/loja";
 
-            ShortUrlSend request = ShortUrlSendFactory.Create(Url);            
+            //ShortUrlSend request = ShortUrlSendFactory.Create(Url);            
 
             //ShortUrlClient client = ShortUrlClientFactory.Create("36b56b77ac24e5595b626b38c6e00074");            
 
