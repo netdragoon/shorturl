@@ -12,9 +12,9 @@ namespace Canducci.Test
             string Url = "http://www.muchiutt.com.br/loja";
 
 
-            ShortUrlSend request = new ShortUrlSend(Url);
-            ShortUrlClient client = new ShortUrlClient(ApiKey);
-            ShortUrlReceive response = client.Receive(request);
+            //ShortUrlSend request = new ShortUrlSend(Url);
+            //ShortUrlClient client = new ShortUrlClient(ApiKey);
+            //ShortUrlReceive response = client.Receive(request);
 
 
             //ShortUrlSend request = ShortUrlSendFactory.Create(Url);            
@@ -29,9 +29,7 @@ namespace Canducci.Test
 
             ShortUrlReceive receive = facade.Receive();
 
-            receive.Keyword;
-            receive.ShortUrl;
-            receive.Url;
+            
 
 
             string c = receive.ToJson();

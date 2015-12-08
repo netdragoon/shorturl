@@ -11,7 +11,7 @@ namespace Canducci.ShortUrl
         public ShortUrlFacade(string ApiKey, string LongUrl)
         {
             send = ShortUrlSendFactory.Create(LongUrl);                        
-            client = ShortUrlClientFactory.Instance(ApiKey);            
+            client = ShortUrlClientFactory.Create(ApiKey);            
         }
         public void Dispose()
         {

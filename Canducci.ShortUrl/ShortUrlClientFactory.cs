@@ -6,9 +6,9 @@
         {
             return new ShortUrlClient(ApiKey);
         }
-        public static ShortUrlClient Instance(string ApiKey)
-        {
-            return ShortUrlClientSingleton.Instance(ApiKey);
-        }
+        //public static ShortUrlClient Instance(string ApiKey)
+        //{
+        //    return ShortUrlClientSingleton.Instance(ApiKey);
+        //}
     }
 }
