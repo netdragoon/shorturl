@@ -16,7 +16,7 @@ init:
   - ps: Set-AppveyorBuildVariable -Name BuildNumber -Value $buildVersion
 
 install:
-  - cmd: powershell -ExecutionPolicy Bypass scripts\Appveyor-Install.ps1
+  #- cmd: powershell -ExecutionPolicy Bypass scripts\Appveyor-Install.ps1
   - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
 
 before_build:
