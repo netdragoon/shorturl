@@ -2,7 +2,7 @@
 version: 0.0.2
 
 # Dev14 is required to build (os actually means VM image)
-os: Visual Studio 2015 CTP
+os: Visual Studio 2015
 
 # set up the build number (last two numbers).  this has to happen before
 # we do anything else because it's the only time we can set environment
