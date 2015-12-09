@@ -9,7 +9,7 @@ API Site trim [https://tr.im/]
 [![NuGet](https://img.shields.io/nuget/v/CanducciShortUrl.svg?style=plastic)](https://www.nuget.org/packages/CanducciShortUrl/)
 
 
-Create a username and password on [tr.im](http://tr.im) site. After entering the site go to Settings and ApiKey guide:
+Create a ___username___ and ___password___ on [tr.im](http://tr.im) site. After entering the site go to __Settings__ and __ApiKey__ guide:
 
 ####Settings
 
