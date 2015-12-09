@@ -18,7 +18,7 @@ Create a ___username___ and ___password___ on [tr.im](http://tr.im) site. After 
 ####ApiKey
 >[![Settings 2](http://i1194.photobucket.com/albums/aa377/netdragoon1/save2_zpszehapgew.png)]()
 
-
+The ApiKey your account [tr.im](http://tr.im) site is responsible for the integration with the code, as in the example below the variable `string ApiKey` and variable `string url` any valid internet address.
 ##Installation NUGET
 
 
@@ -88,5 +88,5 @@ ShortUrlReceive response = facade.Receive();
 
 __Note:__
 
-- ___500 requests per day per user account___
-- ___remember that the async methods (`ReceiveAsync`) are present as the .NET Framework version (> = 4.5)___
+- 500 requests per day per user account.
+- remember that the async methods (`ReceiveAsync`) are present as the .NET Framework version (> = 4.5).
