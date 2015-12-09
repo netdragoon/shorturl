@@ -1,6 +1,32 @@
-version: 1.0.{build}
+# version format.  This will always be changed by the Install script.
+version: 0.0.2
+
+# Dev14 is required to build (os actually means VM image)
+os: Visual Studio 2015 CTP
+
+# set up the build number (last two numbers).  this has to happen before
+# we do anything else because it's the only time we can set environment
+# variables.
+init:
+  - git config --global core.autocrlf true
+  - ps: $year = (Get-Date -Format 'yyyy').Substring(3,1)
+  - ps: $day = Get-Date -Format 'MMdd'
+  - ps: $buildVersion = $year + $day + '.' + $env:APPVEYOR_BUILD_NUMBER
+  - ps: Add-AppveyorMessage -Message "Updating build number to $buildVersion" -Category Information
+  - ps: Set-AppveyorBuildVariable -Name BuildNumber -Value $buildVersion
+
+install:
+  - cmd: powershell -ExecutionPolicy Bypass scripts\Appveyor-Install.ps1
+  - set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
+
+before_build:
+  - nuget restore
+
 build:
-  verbosity: minimal
+  project: Canducci.ShortUrl.sln
   
-cache:
-- packages -> Canducci.ShortUrl\packages.config
+configuration:
+  - Release
+  - Debug
+  
+platform: Any CPU
