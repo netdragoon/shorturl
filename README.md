@@ -86,4 +86,7 @@ ShortUrlReceive response = facade.Receive();
 //facade.Dispose();
 ```
 
-__Note:__ ___500 requests per day per user account___
+__Note:__
+
+- ___500 requests per day per user account___
+- ___remember that the async methods (`ReceiveAsync`) are present as the .NET Framework version (> = 4.5)___
