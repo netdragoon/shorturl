@@ -1,9 +1,5 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Linq;
-using System.Collections.Generic;
-
 namespace Canducci.ShortUrl
 {
     internal class JsonData
@@ -24,6 +20,7 @@ namespace Canducci.ShortUrl
             ob.Add("keyword", keyword);
             return ob.ToString();
         }
+
         //public static string ToJson<T>(T Value)
         //{
         //    DataContractJsonSerializer data =
@@ -46,25 +43,26 @@ namespace Canducci.ShortUrl
         //    return obj;
         //}
     }
-    internal class ShortUrlReceiveUri : JsonConverter
-    {
-        public override bool CanConvert(Type objectType)
-        {
-            throw new NotImplementedException();
-        }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {            
-            return new Uri((string)reader.Value);
-        }
+    //internal class ShortUrlReceiveUri : JsonConverter
+    //{
+    //    public override bool CanConvert(Type objectType)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
 
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            Uri obj = value as Uri;
-            writer.WriteStartObject();
-            writer.WritePropertyName("address");                     
-            serializer.Serialize(writer, obj.AbsoluteUri);            
-            writer.WriteEndObject();
-        }
-    }
+    //    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    //    {            
+    //        return new Uri((string)reader.Value);
+    //    }
+
+    //    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    //    {
+    //        Uri obj = value as Uri;
+    //        writer.WriteStartObject();
+    //        writer.WritePropertyName("address");                     
+    //        serializer.Serialize(writer, obj.AbsoluteUri);            
+    //        writer.WriteEndObject();
+    //    }
+    //}
 }

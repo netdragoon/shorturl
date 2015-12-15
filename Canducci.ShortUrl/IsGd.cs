@@ -12,7 +12,7 @@ namespace Canducci.ShortUrl
 
         public IsGd(string url)
         {
-            Validation.IsUrl(url, "Url Invalid");                   
+            Validation.IsUrl(url, Validation.MessageUrlInvalid);                   
             Url = new Uri(url);
             Client = new WebClient();
             Client.Encoding = Encoding.UTF8;

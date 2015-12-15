@@ -4,6 +4,8 @@ namespace Canducci.ShortUrl
 {
     public abstract class Validation
     {
+        public const string MessageUrlInvalid = "Url invalid";
+
         public static void IsNullOrEmpty(string Value, string Message)
         {
             if (string.IsNullOrEmpty(Value))
