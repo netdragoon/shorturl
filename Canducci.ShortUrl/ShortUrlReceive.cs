@@ -11,9 +11,9 @@ namespace Canducci.ShortUrl
 
         public ShortUrlReceive(string Content, string Url)
         {
-            Validation.IsNullOrEmpty(Content, "Content invalid");
-            Validation.IsJson(Content, "Format Json Invalid.");
-            Validation.IsUrl(Url, "Url invalid");
+            Validation.IsNullOrEmpty(Content, Message.MessageIsNummOrEmpty);
+            Validation.IsJson(Content, Message.MessageJsonIsInvalid);
+            Validation.IsUrl(Url, Message.MessageUrlIsInvalid);
             ShortUrlReceive rep = JsonData.ToObject<ShortUrlReceive>(Content);
             ShortUrl = rep.ShortUrl;
             Keyword = rep.Keyword;

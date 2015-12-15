@@ -2,13 +2,13 @@
 {
     internal abstract class ShortUrlSendFactory
     {
-        internal static ShortUrlSendTrim Create(string LongUrl)
+        internal static ShortUrlSendTrim Create(string longurl)
         {
-            return new ShortUrlSendTrim(LongUrl);
+            return new ShortUrlSendTrim(longurl);
         }
-        internal static ShortUrlSendTrim Create(string LongUrl, string Seed, string Keyword, string VanityDomain)
+        internal static ShortUrlSendTrim Create(string longurl, string seed, string keyword, string vanitydomain)
         {
-            return new ShortUrlSendTrim(LongUrl, Seed, Keyword, VanityDomain);
+            return new ShortUrlSendTrim(longurl, seed, keyword, vanitydomain);
         }
     }
 }

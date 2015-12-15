@@ -12,11 +12,12 @@ namespace Canducci.ShortUrl
 
         public IsGd(string url)
         {
-            Validation.IsUrl(url, Validation.MessageUrlInvalid);                   
+            Validation.IsUrl(url, Message.MessageUrlIsInvalid);                   
             Url = new Uri(url);
             Client = new WebClient();
             Client.Encoding = Encoding.UTF8;
             Address = string.Format("http://is.gd/create.php?format=simple&url={0}", url);
+            Provider = new Provider("is.gd", "http://is.gd/");
         }
 
         internal override string NormalizeContent(params string[] content)

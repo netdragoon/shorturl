@@ -8,22 +8,28 @@ namespace Canducci.ShortUrl
     {
         [JsonConstructor()]
         protected ShortUrlSendTrim() { }
-        public ShortUrlSendTrim(string LongUrl)
+
+        public ShortUrlSendTrim(string longurl)
         {
-            Validation.IsNullOrEmpty(LongUrl, "LongUrl is empty.");
-            Validation.IsUrl(LongUrl, "Url invalid.");
-            this.LongUrl = LongUrl;
+            validate(longurl);
+            LongUrl = longurl;
         }
-        public ShortUrlSendTrim(string LongUrl, string Seed, string Keyword, string VanityDomain)
+
+        public ShortUrlSendTrim(string longurl, string seed, string keyword, string vanitydomain)
         {
-            Validation.IsNullOrEmpty(LongUrl, "LongUrl is empty.");
-            Validation.IsUrl(LongUrl, "Url invalid.");            
-            this.LongUrl = LongUrl;
-            this.Seed = Seed;
-            this.Keyword = Keyword;
-            this.VanityDomain = VanityDomain;
+            validate(longurl);      
+            LongUrl = longurl;
+            Seed = seed;
+            Keyword = keyword;
+            VanityDomain = vanitydomain;
         }
         
+        private void validate(string longurl)
+        {
+            Validation.IsNullOrEmpty(longurl, Message.MessageUrlIsEmpty);
+            Validation.IsUrl(longurl, Message.MessageUrlIsInvalid);
+        }
+
         [JsonRequired()]
         [JsonProperty("long_url")]
         public string LongUrl { get; private set; }
@@ -36,7 +42,7 @@ namespace Canducci.ShortUrl
         
         [JsonProperty("vanity_domain")]
         public string VanityDomain { get; private set; }
-
+                
         public string ToJson()
         {
             return JsonData.ToJson(this);

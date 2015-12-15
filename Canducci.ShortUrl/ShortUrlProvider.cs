@@ -12,14 +12,17 @@ namespace Canducci.ShortUrl
 
         public WebClient Client { get; set; }
 
-        protected string Address { get; set; }
+        public string Address { get; set; }
 
         internal virtual string NormalizeContent(params string[] contents)
         {
             return string.Empty;
         }
 
+        public virtual Provider Provider { get; set; }
+
         abstract public string Content();
+
 #if NET45
         abstract public Task<string> ContentAsync();
 #endif

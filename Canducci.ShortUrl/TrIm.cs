@@ -9,28 +9,30 @@ namespace Canducci.ShortUrl
     public class TrIm : ShortUrlProvider
     {
 
-        protected string ApiKey {get; set;}        
-
+        protected string ApiKey {get; set;}    
         internal ShortUrlSendTrim Send { get; set; }
 
         public TrIm(string key, string url)
         {
-            Validate(key, url);
-            LoadVariable(key, url);
+            validate(key, url);
+            loadvariable(key, url);
             Send = ShortUrlSendFactory.Create(url);
         }
+
         public TrIm(string key, string url, string seed, string keyword, string vanitydomain)
         {
-            Validate(key, url);
-            LoadVariable(key, url);
+            validate(key, url);
+            loadvariable(key, url);
             Send = ShortUrlSendFactory.Create(url, seed, keyword, vanitydomain);
         }
-        protected void Validate(string key, string url)
+
+        protected void validate(string key, string url)
         {
-            Validation.IsUrl(url, "Url invalid");
-            Validation.IsNullOrEmpty(key, "Api Key invalid ou empty.");
+            Validation.IsUrl(url, Message.MessageUrlIsInvalid);
+            Validation.IsNullOrEmpty(key, Message.MessageKeyIsEmpty);
         }
-        protected void LoadVariable(string key, string url)
+
+        protected void loadvariable(string key, string url)
         {
             Url = new Uri(url, UriKind.RelativeOrAbsolute);
             ApiKey = key;
@@ -39,6 +41,7 @@ namespace Canducci.ShortUrl
             Client.Encoding = Encoding.UTF8;
             Client.Headers.Add("x-api-key", ApiKey);
             Address = "https://tr.im/links";
+            Provider = new Provider("tr.im", "https://tr.im/");
         }
                 
         public override string Content()
@@ -48,11 +51,14 @@ namespace Canducci.ShortUrl
         }
 
 #if NET45
+
         public override async Task<string> ContentAsync()
         {
             string json = null;
             return await Client.UploadStringTaskAsync(Address, "POST", json);
         }
+
 #endif
+
     }
 }
