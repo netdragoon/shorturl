@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IJson.cs" />
+    <Compile Include="IsGd.cs" />
+    <Compile Include="ShortUrlProvider.cs" />
     <Compile Include="JsonData.cs" />
     <Compile Include="ShortUrlClient.cs" />
     <Compile Include="ShortUrlClientFactory.cs" />
@@ -52,10 +54,11 @@
     <Compile Include="ShortUrlFacade.cs" />
     <Compile Include="ShortUrlFactory.cs" />
     <Compile Include="ShortUrlReceiveFactory.cs" />
-    <Compile Include="ShortUrlSend.cs" />
+    <Compile Include="ShortUrlSendTrim.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShortUrlReceive.cs" />
     <Compile Include="ShortUrlSendFactory.cs" />
+    <Compile Include="TrIm.cs" />
     <Compile Include="Validation.cs" />
   </ItemGroup>
   <ItemGroup>

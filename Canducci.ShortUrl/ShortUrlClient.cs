@@ -9,36 +9,17 @@ namespace Canducci.ShortUrl
     [Serializable()]
     public sealed class ShortUrlClient: IDisposable
     {
-        private WebClient client;
-        private ShortUrlSend request;
-        private string apiKey;
-        private const string address = "https://tr.im/links";        
-        public ShortUrlClient(string ApiKey)
-        {
-            Validation.IsNullOrEmpty(ApiKey, "Api Key invalid ou empty.");            
-            apiKey = ApiKey;
-            client = new WebClient();
-            client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-            client.Encoding = Encoding.UTF8;
-            client.Headers.Add("x-api-key", apiKey);
-        }
-        public ShortUrlReceive Receive(ShortUrlSend Request)
-        {
-            request = Request;            
-            return receive();
-        }
-        public ShortUrlReceive Receive(string LongUrl)
+        private ShortUrlProvider provider;              
+        public ShortUrlClient(ShortUrlProvider Provider)
         {            
-            request = ShortUrlSendFactory.Create(LongUrl);
-            return receive();
+            provider = Provider;
         }
-        private ShortUrlReceive receive()
+        public ShortUrlReceive Receive()
         {
             try
             {
-                string json = request.ToJson();
-                string content = client.UploadString(address, "POST", json);
-                return ShortUrlReceiveFactory.Create(content, request.LongUrl);
+                string content = provider.Content();
+                return ShortUrlReceiveFactory.Create(content, provider.Url.AbsoluteUri);
             }
             catch (WebException ex)
             {
@@ -46,23 +27,12 @@ namespace Canducci.ShortUrl
             }
         }
 #if NET45
-        public async Task<ShortUrlReceive> ReceiveAsync(ShortUrlSend Request)
-        {
-            request = Request;            
-            return await receiveAsync();
-        }
-        public async Task<ShortUrlReceive> ReceiveAsync(string LongUrl)
-        {            
-            request = ShortUrlSendFactory.Create(LongUrl);              
-            return await receiveAsync();
-        }
-        private async Task<ShortUrlReceive> receiveAsync()
+        public async Task<ShortUrlReceive> ReceiveAsync()
         {
             try
-            {
-                string json = request.ToJson();
-                string content = await client.UploadStringTaskAsync(address, "POST", json);
-                return ShortUrlReceiveFactory.Create(content, request.LongUrl);
+            {                
+                string content = await provider.ContentAsync();
+                return ShortUrlReceiveFactory.Create(content, provider.Url.AbsoluteUri);
             }
             catch (WebException ex)
             {
@@ -74,11 +44,10 @@ namespace Canducci.ShortUrl
         #region Dispose
         public void Dispose()
         {
-            if (client != null)
+            if (provider.Client != null)
             {
-                client.Dispose();
+                provider.Client.Dispose();
             }
-            request = null;
         }
         #endregion
 

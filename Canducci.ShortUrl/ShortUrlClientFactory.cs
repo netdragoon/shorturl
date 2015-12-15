@@ -2,13 +2,9 @@
 {
     public abstract class ShortUrlClientFactory
     {
-        public static ShortUrlClient Create(string ApiKey)
+        public static ShortUrlClient Create(ShortUrlProvider Provider)
         {
-            return new ShortUrlClient(ApiKey);
-        }
-        //public static ShortUrlClient Instance(string ApiKey)
-        //{
-        //    return ShortUrlClientSingleton.Instance(ApiKey);
-        //}
+            return new ShortUrlClient(Provider);
+        }        
     }
 }

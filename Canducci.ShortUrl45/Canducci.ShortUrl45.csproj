@@ -47,6 +47,9 @@
     <Compile Include="..\Canducci.ShortUrl\IJson.cs">
       <Link>IJson.cs</Link>
     </Compile>
+    <Compile Include="..\Canducci.ShortUrl\IsGd.cs">
+      <Link>IsGd.cs</Link>
+    </Compile>
     <Compile Include="..\Canducci.ShortUrl\JsonData.cs">
       <Link>JsonData.cs</Link>
     </Compile>
@@ -65,17 +68,23 @@
     <Compile Include="..\Canducci.ShortUrl\ShortUrlFactory.cs">
       <Link>ShortUrlFactory.cs</Link>
     </Compile>
+    <Compile Include="..\Canducci.ShortUrl\ShortUrlProvider.cs">
+      <Link>ShortUrlProvider.cs</Link>
+    </Compile>
     <Compile Include="..\Canducci.ShortUrl\ShortUrlReceive.cs">
       <Link>ShortUrlReceive.cs</Link>
     </Compile>
     <Compile Include="..\Canducci.ShortUrl\ShortUrlReceiveFactory.cs">
       <Link>ShortUrlReceiveFactory.cs</Link>
     </Compile>
-    <Compile Include="..\Canducci.ShortUrl\ShortUrlSend.cs">
-      <Link>ShortUrlSend.cs</Link>
-    </Compile>
     <Compile Include="..\Canducci.ShortUrl\ShortUrlSendFactory.cs">
       <Link>ShortUrlSendFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Canducci.ShortUrl\ShortUrlSendTrim.cs">
+      <Link>ShortUrlSendTrim.cs</Link>
+    </Compile>
+    <Compile Include="..\Canducci.ShortUrl\TrIm.cs">
+      <Link>TrIm.cs</Link>
     </Compile>
     <Compile Include="..\Canducci.ShortUrl\Validation.cs">
       <Link>Validation.cs</Link>

@@ -1,14 +1,14 @@
 ﻿namespace Canducci.ShortUrl
 {
-    public abstract class ShortUrlSendFactory
+    internal abstract class ShortUrlSendFactory
     {
-        public static ShortUrlSend Create(string LongUrl)
+        internal static ShortUrlSendTrim Create(string LongUrl)
         {
-            return new ShortUrlSend(LongUrl);
+            return new ShortUrlSendTrim(LongUrl);
         }
-        public static ShortUrlSend Create(string LongUrl, string Seed, string Keyword, string VanityDomain)
+        internal static ShortUrlSendTrim Create(string LongUrl, string Seed, string Keyword, string VanityDomain)
         {
-            return new ShortUrlSend(LongUrl, Seed, Keyword, VanityDomain);
+            return new ShortUrlSendTrim(LongUrl, Seed, Keyword, VanityDomain);
         }
     }
 }

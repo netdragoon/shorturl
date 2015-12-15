@@ -17,6 +17,13 @@ namespace Canducci.ShortUrl
             return JsonConvert.DeserializeObject<T>(Content);
             
         }
+        public static string Normalize(string url, string keyword)
+        {            
+            JObject ob = new JObject();
+            ob.Add("url", url);
+            ob.Add("keyword", keyword);
+            return ob.ToString();
+        }
         //public static string ToJson<T>(T Value)
         //{
         //    DataContractJsonSerializer data =

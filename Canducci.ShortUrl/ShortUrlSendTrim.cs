@@ -4,17 +4,17 @@ namespace Canducci.ShortUrl
 {
     [JsonObject()]    
     [Serializable()]
-    public class ShortUrlSend: IJson
+    internal class ShortUrlSendTrim: IJson
     {
         [JsonConstructor()]
-        protected ShortUrlSend() { }
-        public ShortUrlSend(string LongUrl)
+        protected ShortUrlSendTrim() { }
+        public ShortUrlSendTrim(string LongUrl)
         {
             Validation.IsNullOrEmpty(LongUrl, "LongUrl is empty.");
             Validation.IsUrl(LongUrl, "Url invalid.");
             this.LongUrl = LongUrl;
         }
-        public ShortUrlSend(string LongUrl, string Seed, string Keyword, string VanityDomain)
+        public ShortUrlSendTrim(string LongUrl, string Seed, string Keyword, string VanityDomain)
         {
             Validation.IsNullOrEmpty(LongUrl, "LongUrl is empty.");
             Validation.IsUrl(LongUrl, "Url invalid.");            

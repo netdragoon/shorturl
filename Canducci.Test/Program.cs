@@ -5,37 +5,22 @@ namespace Canducci.Test
     {
         static void Main(string[] args)
         {
-            //36b56b77ac24e5595b626b38c6e00074
-
+            //Provider TrIM
             string ApiKey = "36b56b77ac24e5595b626b38c6e00074";
-
             string Url = "http://www.muchiutt.com.br/loja";
+            TrIm tr = new TrIm(ApiKey, Url);
+            ShortUrlClient client = new ShortUrlClient(tr);
+            ShortUrlReceive receive = client.Receive();
 
+            //Provider IsGD
+            IsGd isgd = new IsGd(Url);
+            ShortUrlClient client1 = new ShortUrlClient(isgd);
+            ShortUrlReceive receive1 = client1.Receive();
 
-            //ShortUrlSend request = new ShortUrlSend(Url);
-            //ShortUrlClient client = new ShortUrlClient(ApiKey);
-            //ShortUrlReceive response = client.Receive(request);
-
-
-            //ShortUrlSend request = ShortUrlSendFactory.Create(Url);            
-
-            //ShortUrlClient client = ShortUrlClientFactory.Create("36b56b77ac24e5595b626b38c6e00074");            
-
-            //ShortUrlReceive response = client.Receive(request);
-
-            //client.Dispose();            
-
-            ShortUrlFacade facade = ShortUrlFactory.Create(ApiKey, "http://www.uol.com.br");
-
-            ShortUrlReceive receive = facade.Receive();
+            Canducci.ShortUrl.ShortUrlFacade facade = new ShortUrlFacade(isgd);
+            ShortUrlReceive c = facade.Receive();
 
             
-
-
-            string c = receive.ToJson();
-
-            facade.Dispose();
-
         }
     }
 }

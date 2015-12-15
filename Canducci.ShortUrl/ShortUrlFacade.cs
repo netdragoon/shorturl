@@ -6,26 +6,34 @@ namespace Canducci.ShortUrl
 {
     public class ShortUrlFacade: IDisposable
     {
-        private ShortUrlSend send;
-        private ShortUrlClient client;                
-        public ShortUrlFacade(string ApiKey, string LongUrl)
+        private ShortUrlProvider provider;
+        private ShortUrlClient client;
+        public ShortUrlFacade(ShortUrlProvider provider)
         {
-            send = ShortUrlSendFactory.Create(LongUrl);                        
-            client = ShortUrlClientFactory.Create(ApiKey);            
+            this.provider = provider;
+            client = ShortUrlClientFactory.Create(provider);
         }
         public void Dispose()
         {
-            send = null;
-            client.Dispose();
+            if (provider != null && provider.Client != null)
+            {
+                provider.Client.Dispose();
+            }
+            provider = null;
+            if (client != null)
+            {
+                client.Dispose();
+            }       
+            client = null;            
         }
         public ShortUrlReceive Receive()
         {
-            return client.Receive(send);
+            return client.Receive();
         }
 #if NET45
         public async Task<ShortUrlReceive> ReceiveAsync()
         {
-            return await client.ReceiveAsync(send);
+            return await client.ReceiveAsync();
         }
 #endif
     }
