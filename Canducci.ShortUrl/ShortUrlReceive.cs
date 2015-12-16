@@ -17,7 +17,7 @@ namespace Canducci.ShortUrl
             ShortUrlReceive rep = JsonData.ToObject<ShortUrlReceive>(content);
             ShortUrl = rep.ShortUrl;
             Keyword = rep.Keyword;
-            Url = new Uri(url);
+            LongUrl = new Uri(url);
             Provider = provider;
         }
                 
@@ -30,7 +30,7 @@ namespace Canducci.ShortUrl
         public string Keyword { get; private set; }
 
         [JsonProperty("longurl")]
-        public Uri Url { get; private set; }
+        public Uri LongUrl { get; private set; }
 
         [JsonProperty("provider")]
         public Provider Provider { get; private set; }

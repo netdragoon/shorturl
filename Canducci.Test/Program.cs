@@ -28,6 +28,7 @@ namespace Canducci.Test
             Bitly bitly = new Bitly("bc6da10fdeaf9464d82cdf475cfb3b19c1a506ca", "http://www.ig.com.br");
             ShortUrlClient client3 = new ShortUrlClient(bitly);
             ShortUrlReceive receive3 = client3.Receive();
+            
             string json = receive3.ToJson();
         }
     }
