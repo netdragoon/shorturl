@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Canducci.ShortUrl
 {
+    [Serializable()]
     public class Bitly : ShortUrlProvider
     {
         protected string Token { get; set; }

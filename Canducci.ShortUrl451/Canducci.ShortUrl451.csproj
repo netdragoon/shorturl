@@ -47,6 +47,9 @@
     <Compile Include="..\Canducci.ShortUrl\Bitly.cs">
       <Link>Bitly.cs</Link>
     </Compile>
+    <Compile Include="..\Canducci.ShortUrl\Googl.cs">
+      <Link>Googl.cs</Link>
+    </Compile>
     <Compile Include="..\Canducci.ShortUrl\IJson.cs">
       <Link>IJson.cs</Link>
     </Compile>
@@ -85,6 +88,9 @@
     </Compile>
     <Compile Include="..\Canducci.ShortUrl\ShortUrlSendFactory.cs">
       <Link>ShortUrlSendFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\Canducci.ShortUrl\ShortUrlSendGoogl.cs">
+      <Link>ShortUrlSendGoogl.cs</Link>
     </Compile>
     <Compile Include="..\Canducci.ShortUrl\ShortUrlSendTrim.cs">
       <Link>ShortUrlSendTrim.cs</Link>

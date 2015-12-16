@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+//using System.Linq;
 namespace Canducci.ShortUrl
 {
     internal class JsonData
@@ -13,6 +14,12 @@ namespace Canducci.ShortUrl
             return JsonConvert.DeserializeObject<T>(Content);
             
         }
+        public static dynamic ToObject(string Content)
+        {
+            return JsonConvert.DeserializeObject<dynamic>(Content);
+
+        }
+
         public static string Normalize(string url, string keyword)
         {            
             JObject ob = new JObject();

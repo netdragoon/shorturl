@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 #endif
 namespace Canducci.ShortUrl
 {
+    [Serializable()]
     public class TinyUrl : ShortUrlProvider
     {
         public TinyUrl(string url)

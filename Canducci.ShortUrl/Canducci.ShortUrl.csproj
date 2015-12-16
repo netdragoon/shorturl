@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bitly.cs" />
+    <Compile Include="Googl.cs" />
     <Compile Include="IJson.cs" />
     <Compile Include="IsGd.cs" />
     <Compile Include="Message.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="ShortUrlClientFactory.cs" />
     <Compile Include="ShortUrlFacade.cs" />
     <Compile Include="ShortUrlReceiveFactory.cs" />
+    <Compile Include="ShortUrlSendGoogl.cs" />
     <Compile Include="ShortUrlSendTrim.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShortUrlReceive.cs" />
