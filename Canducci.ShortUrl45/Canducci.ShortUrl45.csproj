@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\Canducci.ShortUrl\Bitly.cs">
+      <Link>Bitly.cs</Link>
+    </Compile>
     <Compile Include="..\Canducci.ShortUrl\IJson.cs">
       <Link>IJson.cs</Link>
     </Compile>

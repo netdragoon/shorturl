@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitly.cs" />
     <Compile Include="IJson.cs" />
     <Compile Include="IsGd.cs" />
     <Compile Include="Message.cs" />

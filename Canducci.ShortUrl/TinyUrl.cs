@@ -13,22 +13,26 @@ namespace Canducci.ShortUrl
             Validation.IsUrl(url, Message.MessageUrlIsInvalid);
             Url = new Uri(url);
             Client = new WebClient();
-            Client.Headers.Add(HttpRequestHeader.ContentType, "application/x-www-form-urlencoded");
-            Client.Encoding = Encoding.Unicode;
-            Address = "http://tinyurl.com/create.php";
-            Provider = new Provider("tinyurl", "http://tinyurl.com");
+            Client.Encoding = Encoding.UTF8;
+            Address = string.Format("http://tinyurl.com/api-create.php?url={0}", url);
+            Provider = new Provider("tinyurl", new Uri("http://tinyurl.com"));
+        }
+
+        internal override string NormalizeContent(params string[] contents)
+        {
+            return JsonData.Normalize(contents[0], "");
         }
 
         public override string Content()
         {
-            string content = Client.UploadString(Address, "POST", string.Format("url={0}", Url.AbsoluteUri));
-            return content;
+            string content = Client.DownloadString(Address);
+            return NormalizeContent(content);
         }
 
 #if NET45
         public override async Task<string> ContentAsync()
         {
-            string content = await Client.UploadStringTaskAsync(Address, "POST", string.Format("url={0}", Url.AbsoluteUri));
+            string content = await Client.DownloadStringTaskAsync(Address);
             return NormalizeContent(content);
         }
 #endif

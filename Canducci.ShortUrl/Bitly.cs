@@ -7,17 +7,21 @@ using System.Threading.Tasks;
 
 namespace Canducci.ShortUrl
 {
-    public class IsGd : ShortUrlProvider
+    public class Bitly : ShortUrlProvider
     {
+        protected string Token { get; set; }
 
-        public IsGd(string url)
+        public Bitly(string token, string url)
         {
-            Validation.IsUrl(url, Message.MessageUrlIsInvalid);                   
+            Validation.IsNotNull(token, Message.MessageKeyIsEmpty);
+            Validation.IsUrl(url, Message.MessageUrlIsInvalid);
             Url = new Uri(url);
-            Client = new WebClient();
+            Token = token;
+            Client = new WebClient();            
             Client.Encoding = Encoding.UTF8;
-            Address = string.Format("http://is.gd/create.php?format=simple&url={0}", url);
-            Provider = new Provider("is.gd", new Uri("http://is.gd/"));
+            Client.Headers.Add("token", token);
+            Address = string.Format("https://api-ssl.bitly.com/v3/shorten?access_token={0}&longUrl={1}&format=txt", token, url);
+            Provider = new Provider("bitly", new Uri("https://bitly.com/"));
         }
 
         internal override string NormalizeContent(params string[] contents)
@@ -33,7 +37,7 @@ namespace Canducci.ShortUrl
 
 #if NET45
         public override async Task<string> ContentAsync()
-        {            
+        {
             string content = await Client.DownloadStringTaskAsync(Address);
             return NormalizeContent(content);
         }

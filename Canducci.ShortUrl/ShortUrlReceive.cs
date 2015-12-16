@@ -9,18 +9,19 @@ namespace Canducci.ShortUrl
         [JsonConstructor()]
         protected ShortUrlReceive() { }
 
-        public ShortUrlReceive(string Content, string Url)
+        public ShortUrlReceive(string content, string url, Provider provider)
         {
-            Validation.IsNullOrEmpty(Content, Message.MessageIsNummOrEmpty);
-            Validation.IsJson(Content, Message.MessageJsonIsInvalid);
-            Validation.IsUrl(Url, Message.MessageUrlIsInvalid);
-            ShortUrlReceive rep = JsonData.ToObject<ShortUrlReceive>(Content);
+            Validation.IsNullOrEmpty(content, Message.MessageIsNummOrEmpty);
+            Validation.IsJson(content, Message.MessageJsonIsInvalid);
+            Validation.IsUrl(url, Message.MessageUrlIsInvalid);
+            ShortUrlReceive rep = JsonData.ToObject<ShortUrlReceive>(content);
             ShortUrl = rep.ShortUrl;
             Keyword = rep.Keyword;
-            this.Url = new Uri(Url);
+            Url = new Uri(url);
+            Provider = provider;
         }
                 
-        [JsonProperty("url")]
+        [JsonProperty("url")]                
         [JsonRequired()]               
         public Uri ShortUrl { get; private set; }
                 
@@ -28,11 +29,17 @@ namespace Canducci.ShortUrl
         [JsonRequired()]
         public string Keyword { get; private set; }
 
-        [JsonProperty("urlfull")]
+        [JsonProperty("longurl")]
         public Uri Url { get; private set; }
+
+        [JsonProperty("provider")]
+        public Provider Provider { get; private set; }
+
         public string ToJson()
         {            
             return JsonData.ToJson(this);
         }
+
+        
     }
 }

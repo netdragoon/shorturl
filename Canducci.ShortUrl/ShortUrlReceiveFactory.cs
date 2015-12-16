@@ -2,9 +2,9 @@
 {
     internal abstract class ShortUrlReceiveFactory
     {
-        internal static ShortUrlReceive Create(string content, string url)
+        internal static ShortUrlReceive Create(string content, string url, Provider provider)
         {
-            return new ShortUrlReceive(content, url);
+            return new ShortUrlReceive(content, url, provider);
         }
     }
 }

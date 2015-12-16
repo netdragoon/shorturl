@@ -18,7 +18,7 @@ namespace Canducci.ShortUrl
             try
             {
                 string content = provider.Content();
-                return ShortUrlReceiveFactory.Create(content, provider.Url.AbsoluteUri);
+                return ShortUrlReceiveFactory.Create(content, provider.Url.AbsoluteUri, provider.Provider);
             }
             catch (WebException ex)
             {
@@ -31,7 +31,7 @@ namespace Canducci.ShortUrl
             try
             {                
                 string content = await provider.ContentAsync();
-                return ShortUrlReceiveFactory.Create(content, provider.Url.AbsoluteUri);
+                return ShortUrlReceiveFactory.Create(content, provider.Url.AbsoluteUri, provider.Provider);
             }
             catch (WebException ex)
             {

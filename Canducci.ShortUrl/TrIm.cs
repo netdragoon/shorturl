@@ -41,7 +41,7 @@ namespace Canducci.ShortUrl
             Client.Encoding = Encoding.UTF8;
             Client.Headers.Add("x-api-key", ApiKey);
             Address = "https://tr.im/links";
-            Provider = new Provider("tr.im", "https://tr.im/");
+            Provider = new Provider("tr.im", new Uri("https://tr.im/"));
         }
                 
         public override string Content()
