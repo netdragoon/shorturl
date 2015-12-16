@@ -14,10 +14,13 @@ namespace Canducci.ShortUrl
             Validation.IsNullOrEmpty(content, Message.MessageIsNummOrEmpty);
             Validation.IsJson(content, Message.MessageJsonIsInvalid);
             Validation.IsUrl(url, Message.MessageUrlIsInvalid);
+
             ShortUrlReceive rep = JsonData.ToObject<ShortUrlReceive>(content);
+
             ShortUrl = rep.ShortUrl;
             Keyword = rep.Keyword;
             LongUrl = new Uri(url);
+
             Provider = provider;
         }
                 

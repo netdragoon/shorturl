@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net;
-using System.Text;
 #if NET45
 using System.Threading.Tasks;
 #endif
@@ -13,19 +12,19 @@ namespace Canducci.ShortUrl
 
         private string address = "https://tr.im/links";
 
-        internal ShortUrlSendTrim Send { get; set; }
+        private ShortUrlSendTrim Send { get; set; }
 
         public TrIm(string key, string url)
         {
             validate(key, url);
-            loadvariable(key, url);
+            loadVariable(key, url);
             Send = ShortUrlSendFactory.Create(url);
         }
 
         public TrIm(string key, string url, string seed, string keyword, string vanitydomain)
         {
             validate(key, url);
-            loadvariable(key, url);
+            loadVariable(key, url);
             Send = ShortUrlSendFactory.Create(url, seed, keyword, vanitydomain);
         }
 
@@ -35,7 +34,7 @@ namespace Canducci.ShortUrl
             Validation.IsNullOrEmpty(key, Message.MessageKeyIsEmpty);
         }
 
-        private void loadvariable(string key, string url)
+        private void loadVariable(string key, string url)
         {
             Url = new Uri(url, UriKind.RelativeOrAbsolute);
             Key = key;

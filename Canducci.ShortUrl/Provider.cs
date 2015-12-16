@@ -1,5 +1,4 @@
 ﻿using System;
-
 namespace Canducci.ShortUrl
 {
     public struct Provider

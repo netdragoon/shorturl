@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Net;
-using System.Text;
 #if NET45
 using System.Threading.Tasks;
 #endif
@@ -15,8 +13,10 @@ namespace Canducci.ShortUrl
         { 
             Validation.IsUrl(url, Message.MessageUrlIsInvalid);
             Url = new Uri(url);
+
             Client = WebClientFactory.Create();
             Address = string.Format(address, url);
+
             Provider = new Provider("tinyurl", new Uri("http://tinyurl.com"));
         }
 
@@ -38,5 +38,6 @@ namespace Canducci.ShortUrl
             return NormalizeContent(content);
         }
 #endif
+
     }
 }
