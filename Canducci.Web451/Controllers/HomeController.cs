@@ -7,12 +7,14 @@ namespace Canducci.Web451.Controllers
     {
         public async Task<ActionResult> Index()
         {
-            string ApiKey = ""; // digite o api key
-            string Url = ""; // digite o endereço
 
-            ShortUrlFacade facade = ShortUrlFactory.Create(ApiKey, Url);
+            TinyUrl turl = new TinyUrl("http://www.gmail.com");
 
-            ShortUrlReceive response = await facade.ReceiveAsync();
+            ShortUrlClient client = ShortUrlClientFactory.Create(turl);
+
+            ShortUrlReceive response = await client.ReceiveAsync();
+
+            client.Dispose();
 
             ViewBag.Url = response.ShortUrl;
 

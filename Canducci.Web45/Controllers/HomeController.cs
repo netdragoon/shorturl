@@ -8,16 +8,13 @@ namespace Canducci.Web45.Controllers
     {
         public async Task<ActionResult> Index()
         {
+            string url = "http://www.globo.com";
 
-            string ApiKey = ""; //digite o api key
+            ShortUrlClient client = new ShortUrlClient(new IsGd(url));
 
-            string Url = ""; //digite a url
+            ShortUrlReceive response = await client.ReceiveAsync();
 
-            ShortUrlSend request = ShortUrlSendFactory.Create(Url);
-
-            ShortUrlClient client = ShortUrlClientFactory.Create(ApiKey);
-
-            ShortUrlReceive response = await client.ReceiveAsync(request);
+            client.Dispose();
 
             ViewBag.Url = response.ShortUrl;
 

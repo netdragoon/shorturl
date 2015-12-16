@@ -10,16 +10,12 @@ namespace Canducci.Web4
             if (!Page.IsPostBack)
             {
 
-                string ApiKey = ""; // digite a apikey
+                string Url = "http://www.uol.com.br"; // digite o endereço
 
-                string Url = ""; // digite o endereço
-
-                ShortUrlSend request = ShortUrlSendFactory.Create(Url);
-
-                ShortUrlClient client = ShortUrlClientFactory.Create(ApiKey);
-
-                ShortUrlReceive response = client.Receive(request);
-
+                IsGd isgd = new IsGd(Url);
+                ShortUrlClient client = new ShortUrlClient(isgd);
+                ShortUrlReceive response = client.Receive();
+                client.Dispose();
                 HLink.NavigateUrl = response.ShortUrl.AbsoluteUri;
 
             }
