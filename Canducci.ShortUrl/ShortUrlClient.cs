@@ -47,6 +47,7 @@ namespace Canducci.ShortUrl
             {
                 provider.Client.Dispose();
             }
+            provider = null;
         }
         #endregion
 

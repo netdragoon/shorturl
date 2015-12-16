@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 namespace Canducci.ShortUrl
 {
     [Serializable()]
-    public class MigreMe : ShortUrlProvider
+    public sealed class MigreMe : ShortUrlProvider
     {
+        private string address = "http://migre.me/api.txt?url={0}";
+
         public MigreMe(string url)
         {
             Validation.IsUrl(url, Message.MessageUrlIsInvalid);
             Url = new Uri(url);
-            Client = new WebClient();
-            Client.Encoding = Encoding.UTF8;
-            Address = string.Format("http://migre.me/api.txt?url={0}", url);
-            Provider = new Provider("Migre.me", new Uri("http://migre.me/"));
+            Client = WebClientFactory.Create();
+            Address = string.Format(address, url);
+            Provider = new Provider("migre.me", new Uri("http://migre.me/"));
         }
 
         internal override string NormalizeContent(params string[] contents)

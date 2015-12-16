@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 namespace Canducci.ShortUrl
 {
     [Serializable()]
-    public class TrIm : ShortUrlProvider
+    public sealed class TrIm : ShortUrlProvider
     {
+        private string Key {get; set;}
 
-        protected string ApiKey {get; set;}    
+        private string address = "https://tr.im/links";
+
         internal ShortUrlSendTrim Send { get; set; }
 
         public TrIm(string key, string url)
@@ -27,21 +29,23 @@ namespace Canducci.ShortUrl
             Send = ShortUrlSendFactory.Create(url, seed, keyword, vanitydomain);
         }
 
-        protected void validate(string key, string url)
+        private void validate(string key, string url)
         {
             Validation.IsUrl(url, Message.MessageUrlIsInvalid);
             Validation.IsNullOrEmpty(key, Message.MessageKeyIsEmpty);
         }
 
-        protected void loadvariable(string key, string url)
+        private void loadvariable(string key, string url)
         {
             Url = new Uri(url, UriKind.RelativeOrAbsolute);
-            ApiKey = key;
-            Client = new WebClient();
-            Client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
-            Client.Encoding = Encoding.UTF8;
-            Client.Headers.Add("x-api-key", ApiKey);
-            Address = "https://tr.im/links";
+            Key = key;
+
+            WebHeaderCollection Headers = new WebHeaderCollection();
+            Headers.Add(HttpRequestHeader.ContentType, "application/json");            
+            Headers.Add("x-api-key", Key);
+            Client = WebClientFactory.Create(Headers);
+
+            Address = address;
             Provider = new Provider("tr.im", new Uri("https://tr.im/"));
         }
                 
@@ -55,10 +59,9 @@ namespace Canducci.ShortUrl
 
         public override async Task<string> ContentAsync()
         {
-            string json = null;
+            string json = Send.ToJson();
             return await Client.UploadStringTaskAsync(Address, "POST", json);
         }
-
 #endif
 
     }

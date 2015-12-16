@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Test ShortUrl";
+}
+
+<script>
+    var app = angular.module("app", []);
+    app.controller("ctrl", function ($scope, $http) {
+
+        $scope.url = "";
+        $scope.bitly = {};
+        $scope.googl = {};
+        $scope.isgd = {};
+        $scope.migreme = {};
+        $scope.tinyurl = {};
+        $scope.trim = {};
+        $scope.items = [];
+
+        $scope.clear = function () {
+
+            //$scope.url = "";
+            $scope.bitly = {};
+            $scope.googl = {};
+            $scope.isgd = {};
+            $scope.migreme = {};
+            $scope.tinyurl = {};
+            $scope.trim = {};
+            $scope.items = [];
+
+        }
+
+        var load1 = function()
+        {
+            $http.post("@Url.Action("GetBitLy")", { url: $scope.url })
+                .then(function (response) {
+                    $scope.bitly = response;
+                    $scope.items.push(response.data);                    
+                })
+                .finally(function () {
+                    load2();
+                });
+        }
+        var load2 = function()
+        {
+            $http.post("@Url.Action("GetGoogl")", { url: $scope.url })
+                .then(function (response) {
+                    $scope.googl = response;
+                    $scope.items.push(response.data);                    
+                }).finally(function () {
+                    load3();
+                });
+        }
+        var load3 = function()
+        {
+            $http.post("@Url.Action("GetIsGd")", { url: $scope.url })
+                .then(function (response) {
+                    $scope.isgd = response;
+                    $scope.items.push(response.data);                    
+                }).finally(function () {
+                    load4();
+                });
+        }
+        var load4 = function()
+        {
+            $http.post("@Url.Action("GetMigreMe")", { url: $scope.url })
+                .then(function (response) {
+                    $scope.migreme = response;
+                    $scope.items.push(response.data);                    
+                }).finally(function () {
+                    load5();
+                });
+        }
+
+        var load5 = function()
+        {
+            $http.post("@Url.Action("GetTinyUrl")", { url: $scope.url })
+                .then(function (response) {
+                    $scope.tinyurl = response;
+                    $scope.items.push(response.data);                    
+                }).finally(function () {
+                    load6();
+                });
+        }
+
+        var load6 = function()
+        {
+            $http.post("@Url.Action("GetTrIm")", { url: $scope.url })
+                .then(function (response) {
+                    $scope.trim = response;
+                    $scope.items.push(response.data);
+                })
+            .finally(function()
+            {
+
+            });
+        }
+
+        $scope.render = function () {
+            $scope.clear();
+            load1();
+        }
+
+        $scope.submit = function () {
+
+            $scope.render();
+
+        };
+
+    });
+</script>
+<br class="clearfix" />
+<br class="clearfix" />
+<div ng-app="app" ng-controller="ctrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">Test ShortUrl</div>
+        <div class="panel-body">
+            <div>
+                <form ng-submit="submit()" method="post">
+                    <div class="col-lg-4">
+                        <label for="url" class="control-label">Digite a url:</label>
+                        <input type="url" name="url" id="url" ng-model="url" class="form-control" required />
+                    </div>
+                    <br />
+                    <button class="btn btn-primary" type="submit">Execute</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br class="clearfix" />    
+    <div>
+        <div class="list-group" ng-repeat="item in items">            
+            <a ng-href="{{item.ShortUrl}}" class="list-group-item">
+                <h4 class="list-group-item-heading">{{item.ShortUrl}}</h4>
+                <p class="list-group-item-text">
+                    {{item.LongUrl}}
+                    <div><em>Provider: {{item.Provider.Name}}</em></div>
+                </p>               
+            </a>
+        </div>
+    </div>
+</div>

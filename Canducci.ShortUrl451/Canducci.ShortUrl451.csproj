@@ -104,6 +104,9 @@
     <Compile Include="..\Canducci.ShortUrl\Validation.cs">
       <Link>Validation.cs</Link>
     </Compile>
+    <Compile Include="..\Canducci.ShortUrl\WebClientFactory.cs">
+      <Link>WebClientFactory.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

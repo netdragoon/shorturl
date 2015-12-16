@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 namespace Canducci.ShortUrl
 {
     [Serializable()]
-    public class TinyUrl : ShortUrlProvider
+    public sealed class TinyUrl : ShortUrlProvider
     {
+        private string address = "http://tinyurl.com/api-create.php?url={0}";
+
         public TinyUrl(string url)
         { 
             Validation.IsUrl(url, Message.MessageUrlIsInvalid);
             Url = new Uri(url);
-            Client = new WebClient();
-            Client.Encoding = Encoding.UTF8;
-            Address = string.Format("http://tinyurl.com/api-create.php?url={0}", url);
+            Client = WebClientFactory.Create();
+            Address = string.Format(address, url);
             Provider = new Provider("tinyurl", new Uri("http://tinyurl.com"));
         }
 

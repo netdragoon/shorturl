@@ -65,6 +65,7 @@
     <Compile Include="TinyUrl.cs" />
     <Compile Include="TrIm.cs" />
     <Compile Include="Validation.cs" />
+    <Compile Include="WebClientFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

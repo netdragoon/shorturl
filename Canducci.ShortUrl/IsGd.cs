@@ -4,20 +4,19 @@ using System.Text;
 #if NET45
 using System.Threading.Tasks;
 #endif
-
 namespace Canducci.ShortUrl
 {
     [Serializable()]
-    public class IsGd : ShortUrlProvider
+    public sealed class IsGd : ShortUrlProvider
     {
+        private string address = "http://is.gd/create.php?format=simple&url={0}";
 
         public IsGd(string url)
         {
             Validation.IsUrl(url, Message.MessageUrlIsInvalid);                   
             Url = new Uri(url);
-            Client = new WebClient();
-            Client.Encoding = Encoding.UTF8;
-            Address = string.Format("http://is.gd/create.php?format=simple&url={0}", url);
+            Client = WebClientFactory.Create();
+            Address = string.Format(address, url);
             Provider = new Provider("is.gd", new Uri("http://is.gd/"));
         }
 
@@ -39,5 +38,6 @@ namespace Canducci.ShortUrl
             return NormalizeContent(content);
         }
 #endif
+
     }
 }

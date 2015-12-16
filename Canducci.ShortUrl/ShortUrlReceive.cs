@@ -39,7 +39,6 @@ namespace Canducci.ShortUrl
         {            
             return JsonData.ToJson(this);
         }
-
         
     }
 }
