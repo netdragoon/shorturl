@@ -29,6 +29,7 @@ namespace Canducci.Test
             ShortUrlClient client3 = new ShortUrlClient(bitly);
             ShortUrlReceive receive3 = client3.Receive();
             
+
             string json = receive3.ToJson();
         }
     }
