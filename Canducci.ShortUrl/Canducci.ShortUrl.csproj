@@ -48,6 +48,7 @@
     <Compile Include="IJson.cs" />
     <Compile Include="IsGd.cs" />
     <Compile Include="Message.cs" />
+    <Compile Include="MigreMe.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="ShortUrlProvider.cs" />
     <Compile Include="JsonData.cs" />

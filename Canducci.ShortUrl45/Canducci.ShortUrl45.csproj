@@ -59,6 +59,9 @@
     <Compile Include="..\Canducci.ShortUrl\Message.cs">
       <Link>Message.cs</Link>
     </Compile>
+    <Compile Include="..\Canducci.ShortUrl\MigreMe.cs">
+      <Link>MigreMe.cs</Link>
+    </Compile>
     <Compile Include="..\Canducci.ShortUrl\Provider.cs">
       <Link>Provider.cs</Link>
     </Compile>
