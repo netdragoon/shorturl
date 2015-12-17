@@ -135,6 +135,62 @@ ___
 
 The providers __TinyUrl__, __MigreMe__ e __IsGd__  do not need any related token or key settings are simpler and just need the url to generate a short url.
 
+####Example MVC ASP.NET
+
+```Csharp
+[HttpPost()]
+public async Task<JsonResult> GetBitLy(string url)
+{
+    string token = "token";
+    Bitly provider = new Bitly(token, url);
+    ShortUrlClient client = ShortUrlClientFactory.Create(provider);            
+    return Json(await client.ReceiveAsync(), JsonRequestBehavior.DenyGet);
+}
+
+[HttpPost()]
+public async Task<JsonResult> GetGoogl(string url)
+{
+    string key = "key";
+    Googl provider = new Googl(key, url);
+    ShortUrlClient client = ShortUrlClientFactory.Create(provider);
+    return Json(await client.ReceiveAsync(), JsonRequestBehavior.DenyGet);
+}
+
+[HttpPost()]
+public async Task<JsonResult> GetIsGd(string url)
+{
+    IsGd provider = new IsGd(url);
+    ShortUrlClient client = ShortUrlClientFactory.Create(provider);
+    return Json(await client.ReceiveAsync(), JsonRequestBehavior.DenyGet);
+}
+
+[HttpPost()]
+public async Task<JsonResult> GetMigreMe(string url)
+{            
+    MigreMe provider = new MigreMe(url);
+    ShortUrlClient client = ShortUrlClientFactory.Create(provider);
+    return Json(await client.ReceiveAsync(), JsonRequestBehavior.DenyGet);
+}
+
+[HttpPost()]
+public async Task<JsonResult> GetTinyUrl(string url)
+{            
+    TinyUrl provider = new TinyUrl(url);
+    ShortUrlClient client = ShortUrlClientFactory.Create(provider);
+    return Json(await client.ReceiveAsync(), JsonRequestBehavior.DenyGet);
+}
+
+[HttpPost()]
+public async Task<JsonResult> GetTrIm(string url)
+{
+    string key = "key";
+    TrIm provider = new TrIm(key, url);
+    ShortUrlClient client = ShortUrlClientFactory.Create(provider);
+    return Json(await client.ReceiveAsync(), JsonRequestBehavior.DenyGet);
+}
+
+```
+
 __Note:__
 
 - remember that the async methods (`ReceiveAsync`) are present as the .NET Framework version (> = 4.5).
