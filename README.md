@@ -47,7 +47,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
-__Example:__ Create a ___user name___ and ___password___ and get your token.
+__Example:__ Create a ___username___ and ___password___ and get your token.
 
 >![Bitly](http://i1308.photobucket.com/albums/s610/maryjanexique/bitly_zpssd3crt8q.png)
 
@@ -65,7 +65,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
-__Example:__Create a ___user name___ and ___password___. Link to more information: ![Googl](https://support.google.com/cloud/answer/6158862?hl=en&ref_topic=6262490)
+__Example:__ Create a ___username___ and ___password___. Link to more information: (https://support.google.com/cloud/answer/6158862?hl=en&ref_topic=6262490)
 ___
 
 __IsGd__ (http://is.gd)
@@ -130,4 +130,3 @@ __Example:__ Create a ___username___ and ___password___ on [tr.im](http://tr.im)
 >[![Settings 2](http://i1194.photobucket.com/albums/aa377/netdragoon1/save2_zpszehapgew.png)]()
 
 The ApiKey your account [tr.im](http://tr.im) site is responsible for the integration with the code, as in the example below the variable `string ApiKey` and variable `string url` any valid internet address.
-##Installation NUGET
