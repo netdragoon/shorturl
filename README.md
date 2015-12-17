@@ -135,6 +135,20 @@ ___
 
 The providers __TinyUrl__, __MigreMe__ e __IsGd__  do not need any related token or key settings are simpler and just need the url to generate a short url.
 
+___ 
+
+####Facade
+
+Can be used the facade also this:
+
+```Csharp
+Googl googl = new Googl("key", "http://www.nuget.com");
+ShortUrlFacade facade = new ShortUrlFacade(googl);
+ShortUrlReceive receive = facade.Receive();
+
+```
+___
+
 ####Example MVC ASP.NET
 
 ```Csharp

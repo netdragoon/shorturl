@@ -1,9 +1,5 @@
 ﻿using Canducci.ShortUrl;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Canducci.Web451.Controllers
@@ -21,7 +17,7 @@ namespace Canducci.Web451.Controllers
         {
             string token = "bc6da10fdeaf9464d82cdf475cfb3b19c1a506ca";
             Bitly provider = new Bitly(token, url);
-            ShortUrlClient client = ShortUrlClientFactory.Create(provider);
+            ShortUrlClient client = ShortUrlClientFactory.Create(provider);            
             return Json(await client.ReceiveAsync(), JsonRequestBehavior.DenyGet);
         }
 

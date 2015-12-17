@@ -43,11 +43,15 @@ namespace Canducci.ShortUrl
         #region Dispose
         public void Dispose()
         {
-            if (provider.Client != null)
+            if (provider != null)
             {
-                provider.Client.Dispose();
+                if (provider.Client != null)
+                {
+                    provider.Client.Dispose();
+                }
+                provider.Client = null;
+                provider = null;
             }
-            provider = null;
         }
         #endregion
 

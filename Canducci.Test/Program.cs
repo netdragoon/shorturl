@@ -36,11 +36,15 @@ namespace Canducci.Test
             //https://www.googleapis.com/urlshortener/v1/url?shortUrl=http%3A%2F%2Fwww.gmail.com&projection=FULL&key={YOUR_API_KEY}
             //https://developers.google.com/url-shortener/v1/getting_started
 
-            Googl googl = new Googl("AIzaSyD8UPkwOX2SZJGBFKazFZ1wFIJeVu6UWMA", "http://www.youtube.com");
-            ShortUrlClient clientg = new ShortUrlClient(googl);
-            ShortUrlReceive receive = clientg.Receive();
+            //Googl googl = new Googl("AIzaSyD8UPkwOX2SZJGBFKazFZ1wFIJeVu6UWMA", "http://www.youtube.com");
+            //ShortUrlClient clientg = new ShortUrlClient(googl);
+            //ShortUrlReceive receive = clientg.Receive();
 
-            string json = receive.ToJson();
+            //string json = receive.ToJson();
+
+            Googl googl = new Googl("AIzaSyD8UPkwOX2SZJGBFKazFZ1wFIJeVu6UWMA", "http://www.youtube.com");
+            ShortUrlFacade facade = new ShortUrlFacade(googl);
+            ShortUrlReceive receive = facade.Receive();
 
         }
     }

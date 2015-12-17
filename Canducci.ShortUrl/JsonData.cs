@@ -11,8 +11,7 @@ namespace Canducci.ShortUrl
 
         public static T ToObject<T>(string Content)
         {
-            return JsonConvert.DeserializeObject<T>(Content);
-            
+            return JsonConvert.DeserializeObject<T>(Content);            
         }
 
         public static dynamic ToObject(string Content)
