@@ -37,7 +37,7 @@ The only difference now is that first of all must choose each providers offered 
 
 - Bitly (https://bitly.com/)
 
-___To work to make the registration on the site and get your token, given primary for funcionalmento by that provider.___
+__To work to make the registration on the site and get your token, given primary for funcionalmento by that provider.__
 
 ```Csharp
 string url = "http://www.nuget.org";
@@ -47,7 +47,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
-Example: Create a user name and password and get your token.
+__Example:__ Create a user name and password and get your token.
 
 ![Bitly](http://i1308.photobucket.com/albums/s610/maryjanexique/bitly_zpssd3crt8q.png)
 
@@ -55,7 +55,7 @@ ___
 
 __Googl__ (https://www.googleapis.com/)
 
-___To work to make the registration on the site and get your key, given paramount to funcionalmento by that provider.___
+__To work to make the registration on the site and get your key, given paramount to funcionalmento by that provider.__
 
 ```Csharp
 string url = "http://www.nuget.org";
@@ -69,7 +69,7 @@ ___
 
 __IsGd__ (http://is.gd)
 
-___No configuration package through immediate availability of information.___
+__No configuration package through immediate availability of information.__
 
 ```Csharp
 string url = "http://www.nuget.org";
@@ -82,7 +82,7 @@ ___
 
 __MigreMe__ (http://migre.me/)
 
-___No configuration package through immediate availability of information.___
+__No configuration package through immediate availability of information.__
 
 ```Csharp
 string url = "http://www.nuget.org";
@@ -95,7 +95,7 @@ ___
 
 __TinyUrl__ (http://tinyurl.com/)
 
-___No configuration package through immediate availability of information.___
+__No configuration package through immediate availability of information.__
 
 ```Csharp
 string url = "http://www.nuget.org";
@@ -108,7 +108,7 @@ ___
 
 __TrIm__ (https://tr.im/links)
 
-___To work to make the registration on the site and get your key, given paramount to funcionalmento by that provider.___
+__To work to make the registration on the site and get your key, given paramount to funcionalmento by that provider.__
 
 ```Csharp
 string url = "http://www.nuget.org";
