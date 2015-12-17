@@ -47,6 +47,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
+___
 
 __Googl__ (https://www.googleapis.com/)
 
@@ -60,6 +61,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
+___
 
 __IsGd__ (http://is.gd)
 
@@ -72,6 +74,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
+___
 
 __MigreMe__ (http://migre.me/)
 
@@ -84,6 +87,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
+___
 
 __TinyUrl__ (http://tinyurl.com/)
 
@@ -96,6 +100,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
+___
 
 __TrIm__ (https://tr.im/links)
 
