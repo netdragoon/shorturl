@@ -130,3 +130,17 @@ __Example:__ Create a ___username___ and ___password___ on [tr.im](http://tr.im)
 >[![Settings 2](http://i1194.photobucket.com/albums/aa377/netdragoon1/save2_zpszehapgew.png)]()
 
 The ApiKey your account [tr.im](http://tr.im) site is responsible for the integration with the code, as in the example below the variable `string ApiKey` and variable `string url` any valid internet address.
+
+___
+
+The providers __TinyUrl__, __MigreMe__ e __IsGd__  do not need any related token or key settings are simpler and just need the url to generate a short url.
+
+__Note:__
+
+- remember that the async methods (`ReceiveAsync`) are present as the .NET Framework version (> = 4.5).
+
+___
+
+####Old Version
+
+The old version only works with trim and are in that link your settings (https://github.com/netdragoon/shorturl/blob/master/README001002.md)
