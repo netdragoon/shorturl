@@ -49,7 +49,7 @@ ShortUrlReceive receive = client.Receive();
 ```
 __Example:__ Create a user name and password and get your token.
 
-![Bitly](http://i1308.photobucket.com/albums/s610/maryjanexique/bitly_zpssd3crt8q.png)
+	![Bitly](http://i1308.photobucket.com/albums/s610/maryjanexique/bitly_zpssd3crt8q.png)
 
 ___
 
