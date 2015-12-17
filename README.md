@@ -47,6 +47,10 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
+Example: Create a user name and password and get your token.
+
+![Bitly](http://i1308.photobucket.com/albums/s610/maryjanexique/bitly_zpssd3crt8q.png)
+
 ___
 
 __Googl__ (https://www.googleapis.com/)
