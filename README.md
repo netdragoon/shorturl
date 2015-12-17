@@ -1,7 +1,5 @@
 # ShortUrl
 
-API Site trim [https://tr.im/]
-
 [![Canducci ShortUrl](http://i1194.photobucket.com/albums/aa377/netdragoon1/1449629657_Location%20HTTP_zpsec7muau0.png)](https://packagist.org/packages/canducci/zipcode)
 
 [![Build status](https://ci.appveyor.com/api/projects/status/3q0thmhimm3tx6g5?svg=true)](https://ci.appveyor.com/project/netdragoon/shorturl)
