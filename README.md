@@ -11,7 +11,7 @@ API Site trim [https://tr.im/]
 The package offers providers in their most current version can be selected for obtaining URL shortened. Are they:
 
 - Bitly (https://bitly.com/)
-- Googl (https://www.googleapis.com/)
+- Googl (https://developers.google.com/url-shortener/v1/getting_started)
 - IsGd (http://is.gd)
 - MigreMe (http://migre.me/)
 - TinyUrl (http://tinyurl.com/)
@@ -47,13 +47,13 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
-__Example:__ Create a user name and password and get your token.
+__Example:__ Create a ___user name___ and ___password___ and get your token.
 
 >![Bitly](http://i1308.photobucket.com/albums/s610/maryjanexique/bitly_zpssd3crt8q.png)
 
 ___
 
-__Googl__ (https://www.googleapis.com/)
+__Googl__ (https://developers.google.com/url-shortener/v1/getting_started)
 
 __To work to make the registration on the site and get your key, given paramount to funcionalmento by that provider.__
 
@@ -65,6 +65,7 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
+__Example:__Create a ___user name___ and ___password___. Link to more information: ![Googl](https://support.google.com/cloud/answer/6158862?hl=en&ref_topic=6262490)
 ___
 
 __IsGd__ (http://is.gd)
@@ -118,3 +119,15 @@ ShortUrlClient client = ShortUrlClientFactory.Create(provider);
 ShortUrlReceive receive = client.Receive();
 
 ```
+
+__Example:__ Create a ___username___ and ___password___ on [tr.im](http://tr.im) site. After entering the site go to __Settings__ and __ApiKey__ guide:
+
+####Settings
+
+>[![Settings 1](http://i1194.photobucket.com/albums/aa377/netdragoon1/save1_zps3pixpshc.png)]()
+
+####ApiKey
+>[![Settings 2](http://i1194.photobucket.com/albums/aa377/netdragoon1/save2_zpszehapgew.png)]()
+
+The ApiKey your account [tr.im](http://tr.im) site is responsible for the integration with the code, as in the example below the variable `string ApiKey` and variable `string url` any valid internet address.
+##Installation NUGET
