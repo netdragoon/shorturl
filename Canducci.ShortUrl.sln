@@ -19,7 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.Web451", "Canducci
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2A5464F1-9BBE-4D0B-AA7C-0F914CAAACD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.ShortUrl.Core", "Canducci.ShortUrl.Core\Canducci.ShortUrl.Core.csproj", "{612D36ED-CF4C-465B-9AE2-1CC6E0424C2C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Canducci.ShortUrl.Core", "Canducci.ShortUrl.Core\Canducci.ShortUrl.Core.csproj", "{612D36ED-CF4C-465B-9AE2-1CC6E0424C2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canducci.Console.Test", "Canducci.Console.Test\Canducci.Console.Test.csproj", "{46431EB1-BD4C-4068-833B-71965F393CA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,12 +61,17 @@ Global
 		{612D36ED-CF4C-465B-9AE2-1CC6E0424C2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{612D36ED-CF4C-465B-9AE2-1CC6E0424C2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{612D36ED-CF4C-465B-9AE2-1CC6E0424C2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46431EB1-BD4C-4068-833B-71965F393CA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46431EB1-BD4C-4068-833B-71965F393CA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46431EB1-BD4C-4068-833B-71965F393CA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46431EB1-BD4C-4068-833B-71965F393CA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{612D36ED-CF4C-465B-9AE2-1CC6E0424C2C} = {2A5464F1-9BBE-4D0B-AA7C-0F914CAAACD6}
+		{46431EB1-BD4C-4068-833B-71965F393CA3} = {2A5464F1-9BBE-4D0B-AA7C-0F914CAAACD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2911635-56F5-49E8-9C90-5DE55A0294F9}
